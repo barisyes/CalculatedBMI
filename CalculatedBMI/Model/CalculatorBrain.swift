@@ -10,9 +10,9 @@ import UIKit
 struct CalculatorBrain {
     
     var bmi: BMI?
-    let color1 = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
-    let color2 = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
-    let color3 = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
+    let colorBlue = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+    let colorGreen = #colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)
+    let colorRed = #colorLiteral(red: 0.9098039269, green: 0.4784313738, blue: 0.6431372762, alpha: 1)
     
     func getBMIValue() -> String {
         return String(format: "%.1f", bmi?.value ?? 0.0)
@@ -30,11 +30,11 @@ struct CalculatorBrain {
         let bmiValue = weight / pow(height, 2)
         
         if bmiValue < 18.5 {
-            bmi = BMI(value: bmiValue, advice: "Eat more pies!", color: color1)
+            bmi = BMI(value: bmiValue, advice: "Eat more pies!", color: colorBlue)
         } else if bmiValue < 24.9 {
-            bmi = BMI(value: bmiValue, advice: "Fir as a fiddle!", color: color2)
+            bmi = BMI(value: bmiValue, advice: "Fir as a fiddle!", color: colorGreen)
         } else {
-            bmi = BMI(value: bmiValue, advice: "Eat less pies!", color: color3)
+            bmi = BMI(value: bmiValue, advice: "Eat less pies!", color: colorRed)
         }
     }
     
